@@ -11,8 +11,8 @@ const Home_Skills = () => {
     <>
       <motion.div
         className="flex flex-col md:flex-row md:gap-16 content-start"
-        initial={{ opacity: 0, x: -200 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "linear" }}
         viewport={{ once: true }}
       >
@@ -28,8 +28,8 @@ const Home_Skills = () => {
       </motion.div>
       <motion.div
         className="flex flex-col md:flex-row md:gap-16"
-        initial={{ opacity: 0, x: 200 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "linear" }}
         viewport={{ once: true }}
       >

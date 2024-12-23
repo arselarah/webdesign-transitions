@@ -48,19 +48,21 @@ const NavMobile = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-0 z-10 h-16 flex items-center">
+      <div className="fixed right-0 top-0 z-10 h-16 flex items-center bg-transparent mix-blend-difference ">
         <button
-          className="relative w-16 h-6 px-4 md:hidden cursor-pointer flex flex-col justify-between menu-icon hover:scale-110 ease-in duration-200 z-40"
+          className="relative w-10 h-10 md:hidden cursor-pointer mr-5 menu-icon hover:scale-110 ease-in duration-200 z-40 rounded-full bg-black "
           onClick={handleMenu}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <div className="flex flex-col justify-between h-5 items-center">
+            <span className=" text-slate-900 backdrop-invert "></span>
+            <span className=" text-white backdrop-invert"></span>
+            <span className=" text-white backdrop-invert"></span>
+          </div>
         </button>
       </div>
-      <div className="fixed top-0 left-0 w-full h-dvh z-10 md:hidden mobile-menu origin-top">
+      <div className="fixed top-0 left-0 w-full h-dvh z-10 md:hidden mobile-menu origin-top will-change-transform">
         <div className="flex flex-col w-full h-full">
-          <div className="flex justify-between h-16 px-4 items-center">
+          <div className="flex justify-between h-16 px-5 items-center">
             <div className="origin-bottom overflow-hidden menu-title">
               <h3 className="font-semibold text-xl pt-8 ">
                 Ideas creativas.
@@ -77,7 +79,10 @@ const NavMobile = () => {
           </div>
           <div className="flex flex-col justify-center w-full h-full text-center mobile-links gap-2">
             {links.map((link, index) => (
-              <div key={index} className="origin-bottom overflow-hidden">
+              <div
+                key={index}
+                className="origin-bottom overflow-hidden will-change-transform"
+              >
                 <Link href={link.href} onClick={closeMenu}>
                   <span className="">{link.label}</span>
                 </Link>

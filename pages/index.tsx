@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <section className="w-full">
           <div className="relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto xl:px-4">
+            <div className="centered max-w-[100rem] mx-auto">
               <motion.div
                 className="titles flex justify-start md:flex-row"
                 initial={{ opacity: 0, y: "50px" }}
@@ -54,7 +54,7 @@ export default function Home() {
           </div>{" "}
           {/* section-home-about */}
           <div className="yointro section-home-portfolio relative pt-28 xl:pt-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto xl:px-4 grid_portfolio flex flex-col md:flex-row gap-4 md:gap-16">
+            <div className="centered max-w-[100rem] mx-auto grid_portfolio flex flex-col md:flex-row gap-4 md:gap-16">
               <div className="titles flex justify-start md:flex-row">
                 <div className="yointro_text-container">
                   <h3 className="text-sm xl:text-xl">Lo que hago</h3>
@@ -72,7 +72,7 @@ export default function Home() {
           </div>{" "}
           {/* section-home-portfolio */}
           <div className="relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto xl:px-4">
+            <div className="centered max-w-[100rem] mx-auto ">
               <motion.div
                 className="titles flex justify-start md:flex-row"
                 initial={{ opacity: 0, y: "50px" }}
@@ -112,7 +112,7 @@ export default function Home() {
           </div>{" "}
           {/* section-home-about */}
           <div className="yointro section-what-Ido  relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto xl:px-4 overflow-hidden xl:overflow-visible">
+            <div className="centered max-w-[100rem] mx-auto overflow-hidden">
               <div className="skills">
                 <Home_Skills />
               </div>

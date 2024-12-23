@@ -32,7 +32,7 @@ const Portfolio = () => {
           <div className="colorido"></div>
         </div>
         <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto xl:px-4 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
+          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
             <div className="titles flex justify-start md:flex-row col-span-4">
               <div className="yointro_text-container">
                 <h3 className="text-sm xl:text-xl">Lo que hago</h3>
@@ -46,7 +46,7 @@ const Portfolio = () => {
         </div>{" "}
         {/* section-home-portfolio */}
         <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full colorido-inner">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto xl:px-4 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
+          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
             <div className="titles flex justify-start md:flex-row col-span-4">
               <div className="yointro_text-container">
                 <h3 className="text-sm xl:text-xl">Lo que hago</h3>
@@ -61,7 +61,7 @@ const Portfolio = () => {
         </div>{" "}
         {/* section-home-portfolio */}
         <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full colorido-inner">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto xl:px-4 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
+          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
             <div className="titles flex justify-start md:flex-row col-span-4">
               <div className="yointro_text-container">
                 <h3 className="text-sm xl:text-xl">Lo que hago</h3>

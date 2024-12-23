@@ -14,8 +14,8 @@ const links = [
 const NavBar = () => {
   return (
     <>
-      <header className="fixed top-0 left-0 z-10 bg-transparent w-full h-fit flex flex-row py-5">
-        <div className="navBar_container relative w-full flex flex-row items-center px-4 max-w-[100rem] h-6 mx-auto">
+      <header className="fixed top-0 left-0 z-10 bg-transparent w-full h-fit flex flex-row py-5 px-5 mix-blend-difference">
+        <div className="navBar_container relative w-full flex flex-row items-center max-w-[100rem] h-6 mx-auto">
           <div className="logo-prueba w-[250px] relative z-20 flex flex-row justify-start">
             <Link className="pr-4" href="/" passHref>
               <img className="w-[40px] h-[40px]" src="../logo.svg" alt="" />

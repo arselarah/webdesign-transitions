@@ -287,8 +287,8 @@ label {
 }
 
 .head_text {
-  @apply font-medium leading-[1.15] text-black sm:text-6xl;
-  font-size: clamp(2.5rem, 7vw, 7.5rem);
+  @apply font-semibold leading-[1] text-black sm:text-6xl capitalize text-left mx-auto;
+  font-size: clamp(4rem, 9vw, 10.5rem);
 }
 
 .heading {
@@ -884,8 +884,8 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 .menu-icon span {
   display: block;
   height: 2px;
-  background: #000;
-  width: 2rem;
+  /* background: #000; */
+  width: 1.5rem;
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
 }

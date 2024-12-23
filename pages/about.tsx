@@ -82,7 +82,7 @@ const About = () => {
       <Page>
         <div className="hero-inner relative py-28 xl:py-56 px-5 w-full">
           <div className="bg-animation"></div>
-          <div className="hero_text-container max-w-[100rem] mx-auto xl:px-4">
+          <div className="hero_text-container max-w-[100rem] mx-auto">
             <div className=" text-container_box scroll-reveal-loading">
               <h3 className="text-sm xl:text-xl text-center">Acerca de mi</h3>
               <h1 className="heading-hero text-center mx-auto">
@@ -96,7 +96,7 @@ const About = () => {
           <div className="colorido"></div>
         </div>
         <div className="yointro section-what-Ido relative py-28 xl:py-56 px-5 w-full">
-          <div className="centered max-w-[100rem] mx-auto xl:px-4">
+          <div className="centered max-w-[100rem] mx-auto">
             <div className="relative pb-28 xl:pb-56">
               <div className="titles flex justify-start md:flex-row">
                 <motion.div
@@ -260,7 +260,7 @@ const About = () => {
         </div>{" "}
         {/* section-what-Ido */}
         <div className="yointro section-what-Ido relative py-28 xl:py-56 px-5 w-full">
-          <div className="centered max-w-[100rem] mx-auto xl:px-4">
+          <div className="centered max-w-[100rem] mx-auto ">
             <div className="skills">
               <div>
                 <motion.div
