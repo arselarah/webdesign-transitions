@@ -65,7 +65,7 @@ const NavMobile = () => {
           <div className="flex justify-between h-16 px-5 items-center">
             <div className="origin-bottom overflow-hidden menu-title">
               <h3 className="font-semibold text-xl pt-8 ">
-                Ideas creativas.
+                Ideas creativas,
                 <br />
                 Diseño inteligente
               </h3>
