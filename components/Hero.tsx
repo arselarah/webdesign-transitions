@@ -24,21 +24,21 @@ const Hero = () => {
   //const opacity = useTransform(y, [0, 300], [1, 0]); // Ajusta los límites aquí
 
   return (
-    <header
+    <motion.header
       id="hero"
       className="flex items-center h-screen min-h-min w-full pb-32 gradient-bottom overflow-clip px-4"
     >
-      <motion.div
-        className="w-full max-w-[100rem] mx-auto z-0 scroll-reveal-loading will-change-transform"
-        initial={{ opacity: 0, scale: 0.9, y: "50px" }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: "tween",
-          duration: 0.5,
-          ease: "easeInOut",
-          delay: 2,
-        }}
+      <div
+        className="w-full max-w-[100rem] mx-auto z-0  will-change-transform"
+        // initial={{ opacity: 0, scale: 0.9, y: "50px" }}
+        // whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        // viewport={{ once: true }}
+        // transition={{
+        //   type: "tween",
+        //   duration: 0.5,
+        //   ease: "easeInOut",
+        //   delay: 2,
+        // }}
         style={
           {
             //y: translateY, // Vincula el desplazamiento vertical
@@ -49,16 +49,71 @@ const Hero = () => {
       >
         <h3 className="text-center">Arsenio Lara - Web & Digital Designer</h3>
         <h1 className="head_text">
-          <span>Ideas creativas. Diseño inteligente</span>
+          <div className="relative overflow-hidden h-fit">
+            <motion.span
+              className="inline-block mr-8"
+              initial={{ y: 180 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.9,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            >
+              Ideas
+            </motion.span>
+            <motion.span
+              className="inline-block"
+              initial={{ y: 180 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.9,
+                ease: "easeInOut",
+                delay: 2.1,
+              }}
+            >
+              Creativas,
+            </motion.span>
+          </div>
+          <div className="relative overflow-hidden h-fit ">
+            <motion.span
+              className="inline-block mr-8"
+              initial={{ y: 180 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.9,
+                ease: "easeInOut",
+                delay: 2.1,
+              }}
+            >
+              Diseño
+            </motion.span>
+            <motion.span
+              className="inline-block leading-tight"
+              initial={{ y: 180 }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "tween",
+                duration: 0.9,
+                ease: "easeInOut",
+                delay: 2.2,
+              }}
+            >
+              Inteligente.
+            </motion.span>
+          </div>
         </h1>
-      </motion.div>
+      </div>
       <div className="gradient"></div>
       <div className="fluid">
         <video width="100%" height="100%" autoPlay loop muted>
           <source src="assets/background.mp4" type="video/mp4" />
         </video>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
