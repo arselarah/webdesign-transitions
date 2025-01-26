@@ -30,7 +30,7 @@ const Home_Portafolio = () => {
       {portfolioData.map((item, index) => (
         <motion.div
           key={index}
-          className="portfolio-items_container"
+          className="relative h-screen w-full flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.9, y: "50px" }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,14 +40,14 @@ const Home_Portafolio = () => {
             ease: "linear",
           }}
         >
-          <div className="portfolio-items_item">
+          <div className="portfolio-items_item w-full max-w-[50rem] px-4 lg:px-10">
             <div className={`item-image ${item.imageClass} pb-[100%] relative`}>
               <a
                 href={item.link}
                 className="absolute top-0 left-0 w-full h-full z-[1]"
               ></a>
             </div>
-            <div className="item-info flex items-center justify-between">
+            <div className="item-info flex items-center justify-between text-white">
               <div className="item-info_left">
                 <p>{item.description}</p>
                 <h4 className="text-gray-primario">{item.title}</h4>

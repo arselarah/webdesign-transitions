@@ -2,10 +2,50 @@ import Page from "@/components/page";
 import Hero from "@/components/Hero";
 import Home_Skills from "@/components/home_skills";
 import Home_Portafolio from "@/components/home_portafolio";
-import { motion } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 import Head from "next/head";
+import { useRef } from "react";
 
 export default function Home() {
+  const refPortafolio = useRef(null);
+  const refChangeColor = useRef(null);
+  const { scrollYProgress: horizontalScroll } = useScroll({
+    target: refPortafolio,
+  });
+  const x = useTransform(horizontalScroll, [0, 1], ["0%", "-100%"]);
+  const { scrollYProgress: ocultarScroll } = useScroll({
+    target: refPortafolio,
+    offset: ["start end", ".3 end"],
+  });
+  const ocultar = useTransform(ocultarScroll, [0, 1], [1, 0]);
+  const { scrollYProgress: scrollYPortafolio } = useScroll({
+    target: refPortafolio,
+    offset: [".2 end", ".5 start"],
+  });
+  const scalePorta = useTransform(scrollYPortafolio, [0, 1], [1, 0.7]);
+  const skewPorta = useTransform(
+    scrollYPortafolio,
+    [0, 0.5, 1],
+    ["0deg", "2deg", "0deg"]
+  );
+
+  const { scrollYProgress: scrollYChangeColor } = useScroll({
+    target: refChangeColor,
+    offset: ["start .8", ".8 end"],
+  });
+  const changeColor = useTransform(
+    scrollYChangeColor,
+    [0, 1],
+    ["#282828", "#000000"]
+  );
+
+  //const scalePortafolio = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  // const opacityPortafolio = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  // const translateYPortafolio = useTransform(
+  //   scrollYProgress,
+  //   [0, 1],
+  //   ["50%", "0%"]
+  // );
   return (
     <>
       <Head>
@@ -17,108 +57,133 @@ export default function Home() {
       <Page>
         <Hero />
         <section className="w-full">
-          <div className="relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto">
-              <motion.div
-                className="titles flex justify-start md:flex-row"
-                initial={{ opacity: 0, y: "50px" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-              >
-                <div className="yointro_text-container scroll-reveal">
-                  <h3 className="text-sm xl:text-xl">Acerca de mi</h3>
-                  <h2 className="heading">
-                    <span>Diseñador web y digital freelance</span>
-                  </h2>
-                </div>
-              </motion.div>
-              <motion.div
-                className=" 
+          <section className="relative min-h-[450vh] h-fit">
+            <motion.div
+              style={{ opacity: ocultar }}
+              className="sticky top-0 py-28 xl:py-56 px-5 w-full h-screen"
+            >
+              <div className="centered max-w-[100rem] mx-auto relative flex flex-col justify-center h-full">
+                <motion.div
+                  className="titles flex justify-start md:flex-row"
+                  initial={{ opacity: 0, y: "50px" }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                >
+                  <div className="yointro_text-container scroll-reveal">
+                    <h3 className="text-sm xl:text-xl">Acerca de mi</h3>
+                    <h2 className="heading">
+                      <span>Diseñador web y digital freelance</span>
+                    </h2>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className=" 
 					w-full flex justify-end md:flex-row"
-                initial={{ opacity: 0, y: "50px" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-              >
-                <div className="subtitles">
-                  <p className="text-gray-primario">
-                    Hola, soy Arsenio Lara, diseñador web y digital freelance.
-                    Me dedico a cada proyecto con pasión para crear algo
-                    elegante, duradero y efectivo para ti y tus clientes.
-                  </p>
-                </div>
-              </motion.div>
-            </div>{" "}
-            {/* centered */}
-          </div>{" "}
-          {/* section-home-about */}
-          <div className="yointro section-home-portfolio relative pt-28 xl:pt-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto grid_portfolio flex flex-col md:flex-row gap-4 md:gap-16">
-              <div className="titles flex justify-start md:flex-row">
-                <div className="yointro_text-container">
-                  <h3 className="text-sm xl:text-xl">Lo que hago</h3>
-                  <h2 className="heading">
-                    <span>Portafolio</span>
-                  </h2>
-                </div>
-              </div>
-              <div className="portfolio-items grid gap-4 md:gap-8 md:grid-cols-2 col-span-4 grow">
-                <Home_Portafolio />
-              </div>
-            </div>{" "}
-            {/* centered */}
-            {/* <div className='colorido'></div> */}
-          </div>{" "}
-          {/* section-home-portfolio */}
-          <div className="relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto ">
+                  initial={{ opacity: 0, y: "50px" }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                >
+                  <div className="subtitles">
+                    <p className="text-gray-primario">
+                      Hola, soy Arsenio Lara, diseñador web y digital freelance.
+                      Me dedico a cada proyecto con pasión para crear algo
+                      elegante, duradero y efectivo para ti y tus clientes.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>{" "}
+              {/* centered */}
+            </motion.div>{" "}
+            {/* section-home-about */}
+            <section
+              ref={refPortafolio}
+              className="relative h-[300vh] w-ful carrusel bg-transparent"
+            >
               <motion.div
-                className="titles flex justify-start md:flex-row"
-                initial={{ opacity: 0, y: "50px" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                // initial={{ skewY: "2deg" }}
+                // whileInView={{ skewY: "0deg" }}
+                // viewport={{ once: false }}
+                // transition={{ delay: 0.5, duration: 1.5, ease: "linear" }}
+                style={{ scale: scalePorta, skewY: skewPorta }}
+                className="carrusel_contenedor h-screen sticky top-0 overflow-hidden bg-[#282828]"
               >
-                <div className="yointro_text-container scroll-reveal">
-                  <h3 className="text-sm xl:text-xl">Cómo lo hago</h3>
-                  <h2 className="heading">
-                    <span>
-                      Impulsando la innovación en el ámbito digital, soy
-                      Arsenio, diseñador web y digital freelance.
-                    </span>
-                  </h2>
-                </div>
+                <motion.div
+                  className="items grid auto-cols-[50%] grid-flow-col"
+                  style={{ x }}
+                >
+                  <div className="titles h-screen w-[50vw] flex flex-col justify-center items-center">
+                    <div className="yointro_text-container relative h-auto">
+                      <h3 className="text-sm xl:text-xl text-white">
+                        Lo que hago
+                      </h3>
+                      <h2 className="heading text-white">
+                        <span>Portafolio</span>
+                      </h2>
+                    </div>
+                  </div>
+                  <Home_Portafolio />
+                </motion.div>
               </motion.div>
-              <motion.div
-                className=" 
+            </section>
+            {/* section-home-portfolio */}
+            <motion.div
+              style={{ backgroundColor: changeColor }}
+              className="sticky top-0 py-28 xl:py-56 px-5 w-full h-[100vh] text-white"
+            >
+              <div className="centered max-w-[100rem] mx-auto relative flex flex-col justify-center h-full">
+                <motion.div
+                  className="titles flex justify-start md:flex-row"
+                  initial={{ opacity: 0, y: "50px" }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                >
+                  <div className="yointro_text-container">
+                    <h3 className="text-sm xl:text-xl">Cómo lo hago</h3>
+                    <h2 className="heading">
+                      <span>
+                        Impulsando la innovación en el ámbito digital, soy
+                        Arsenio, diseñador web y digital freelance.
+                      </span>
+                    </h2>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className=" 
 					w-full flex justify-end md:flex-row"
-                initial={{ opacity: 0, y: "50px" }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-              >
-                <div className="subtitles">
-                  <p className="text-gray-primario">
-                    Mi enfoque se centra en crear experiencias de usuario
-                    excepcionales y desarrollar sitios web dinámicos mediante el
-                    uso de tecnologías de vanguardia como HTML5, CSS3, React y
-                    Next.js, entre otras.
-                  </p>
+                  initial={{ opacity: 0, y: "50px" }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                >
+                  <div className="subtitles">
+                    <p className="text-gray-primario">
+                      Mi enfoque se centra en crear experiencias de usuario
+                      excepcionales y desarrollar sitios web dinámicos mediante
+                      el uso de tecnologías de vanguardia como HTML5, CSS3,
+                      React y Next.js, entre otras.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>{" "}
+              {/* centered */}
+            </motion.div>{" "}
+            {/* section-home-about */}
+            <div
+              ref={refChangeColor}
+              className="yointro section-what-Ido sticky top-0 h-screen py-28 xl:py-56 px-5 w-full bg-black text-white "
+            >
+              <div className="centered max-w-[100rem] mx-auto h-full flex flex-col justify-center">
+                <div className="skills flex flex-wrap gap-10 justify-between relative">
+                  <Home_Skills />
                 </div>
-              </motion.div>
+              </div>{" "}
+              {/* centered */}
             </div>{" "}
-            {/* centered */}
-          </div>{" "}
-          {/* section-home-about */}
-          <div className="yointro section-what-Ido  relative py-28 xl:py-56 px-5 w-full">
-            <div className="centered max-w-[100rem] mx-auto overflow-hidden">
-              <div className="skills">
-                <Home_Skills />
-              </div>
-            </div>{" "}
-            {/* centered */}
-          </div>{" "}
+          </section>
+
           {/* section-what-Ido */}
         </section>
       </Page>

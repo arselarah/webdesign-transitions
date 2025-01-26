@@ -1,9 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
@@ -63,7 +81,7 @@ label {
   height: 65vh;
   border-radius: 50%;
   position: fixed;
-  opacity: 0.4;
+  opacity: 0.2;
   background-color: #ff3cac;
   background-image: linear-gradient(
     225deg,
@@ -75,7 +93,9 @@ label {
   animation: random-bg 8s ease infinite;
   transition: all;
   overflow: hidden;
-  /* filter: blur(1px); */
+  z-index: 999;
+  pointer-events: none;
+  filter: invert(100%);
 }
 
 @keyframes random-bg {
@@ -279,20 +299,20 @@ label {
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-poppins flex items-center justify-center;
 }
 
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-poppins flex items-center justify-center;
 }
 
 .head_text {
-  @apply font-semibold leading-[1] text-black sm:text-6xl capitalize text-left mx-auto;
+  @apply font-semibold leading-[1] tracking-tight sm:text-6xl capitalize text-left;
   font-size: clamp(4rem, 9vw, 10.5rem);
 }
 
 .heading {
-  @apply font-medium leading-tight text-black sm:text-2xl;
+  @apply font-medium leading-tight sm:text-2xl;
   font-size: clamp(2rem, 2.8vw, 3.5rem);
   line-height: 1.1;
   padding-bottom: 0.5em;
@@ -330,7 +350,7 @@ label {
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-roboto pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -361,7 +381,7 @@ label {
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-roboto font-semibold text-lg text-black tracking-wide;
 }
 
 .dropdown {
@@ -369,7 +389,7 @@ label {
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-poppins text-gray-700 hover:text-gray-500 font-medium;
 }
 
 /* PromptCard Component */
@@ -467,8 +487,8 @@ label {
   /* -webkit-box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1);
 -moz-box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1);
 box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
-    -10px -10px 10px rgba(255, 255, 255, 0.5);
+  /* box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1),
+    -10px -10px 10px rgba(255, 255, 255, 0.5); */
   transform: translateY(-2px) translateX(2px);
 }
 
@@ -494,13 +514,20 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .item-info_right a {
-  background-color: #000;
-  color: #ffffff;
+  background-color: #fff;
+  color: #000;
   display: inline-block;
   border-radius: 50vw;
   padding: 0.7rem 1.5rem;
   font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid #000;
+}
+
+.item-info_right a:hover {
+  background-color: transparent;
+  color: white;
+  border-color: white;
 }
 
 .joy-center {
@@ -1126,7 +1153,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
   inset: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #fff;
   top: 0;
   left: 0;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -1136,4 +1163,9 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 
 .efecto-hover:hover .ghost-link {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clipped-video {
+  -webkit-clip-path: url(#text-overlay);
+  clip-path: url(#text-overlay);
 }

@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ["Roboto", "sans-serif"],
-        inter: ["Poppins", "sans-serif"],
+        roboto: ["--font-roboto"],
+        poppins: ["--font-poppins"],
       },
       colors: {
         "primary-bg": "#000000",

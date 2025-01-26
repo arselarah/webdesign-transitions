@@ -1,15 +1,26 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
-
+import { setupSmoothScroll } from "@/utils/smooth-scroll";
+import { useEffect } from "react";
 import "./globals.css";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    setupSmoothScroll();
+  }, []);
   const router = useRouter();
   return (
     <AnimatePresence mode="wait">
       <motion.div key={router.pathname}>
-        <Component {...pageProps} />
+        <Component {...pageProps} className={`${poppins.className}`} />
 
         <motion.div
           className="slide-in absolute inset-0 top-0 left-0 w-full h-svh bg-black z-50"

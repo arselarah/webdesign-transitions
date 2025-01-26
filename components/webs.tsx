@@ -83,7 +83,7 @@ const Webs = () => {
                   <p>{item.description}</p>
                   <h4 className="text-gray-primario">{item.title}</h4>
                 </div>
-                <div className="item-info_right">
+                <div className="bg-black text-white inline-block rounded-[50vw] p-[.7rem_1.5rem] border-[1px] border-black hover:bg-transparent hover:text-black transition-colors duration-300 text-[.8rem]">
                   <a href={item.link}>Visitar Sitio Web</a>
                 </div>
               </div>

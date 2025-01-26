@@ -10,10 +10,10 @@ const Home_Skills = () => {
   return (
     <>
       <motion.div
-        className="flex flex-col md:flex-row md:gap-16 content-start"
+        className="flex flex-col md:flex-row md:gap-16 content-start "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.5, ease: "linear" }}
+        transition={{ delay: 0.25, duration: 1.5, ease: "linear" }}
         viewport={{ once: true }}
       >
         <div className="yointro_text-container pb-6">
@@ -30,7 +30,7 @@ const Home_Skills = () => {
         className="flex flex-col md:flex-row md:gap-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.5, ease: "linear" }}
+        transition={{ delay: 0.45, duration: 1.5, ease: "linear" }}
         viewport={{ once: true }}
       >
         <div className="yointro_text-container pb-6 grow md:flex md:justify-end">

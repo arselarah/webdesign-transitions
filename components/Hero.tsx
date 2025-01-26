@@ -1,119 +1,173 @@
-"use client";
-import React, { useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
+
+// const roboto = Roboto({
+//   subsets: ["latin"],
+//   weight: ["100", "300", "400", "500", "700", "900"],
+//   variable: "--font-poppins",
+// });
 
 const Hero = () => {
-  // Valor animado para el desplazamiento vertical
-  const y = useMotionValue(0);
+  const ref = useRef(null);
+  const { scrollYProgress: scrollEffectPrimero } = useScroll({
+    target: ref,
+    offset: ["start start", "end .6"],
+  });
+  const { scrollYProgress: scrollEffectSegundo } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-  // Efecto para actualizar el valor animado en función del scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      y.set(window.scrollY * 0.25); // Ajusta el factor de desplazamiento aquí
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [y]);
-
-  // Transforma el valor de scroll en un desplazamiento vertical
-  //const translateY = useTransform(y, (value) => `${value}px`);
-
-  // Transforma el valor de scroll en una escala
-  // const scale = useTransform(y, [0, 300], [1, 1.5]); // Ajusta los límites aquí
-  //const opacity = useTransform(y, [0, 300], [1, 0]); // Ajusta los límites aquí
+  const scaleHero = useTransform(scrollEffectPrimero, [0, 1], [1, 0.9]);
+  const translateHeading = useTransform(
+    scrollEffectSegundo,
+    [0, 1],
+    ["0%", "20%"]
+  );
+  // const translateHeading = useTransform(
+  //   scrollEffectSegundo,
+  //   [0, 1],
+  //   ["0%", "-50%"]
+  // );
+  // const translateHeadingSegundo = useTransform(
+  //   scrollEffectSegundo,
+  //   [0, 1],
+  //   ["0%", "50%"]
+  // );
 
   return (
-    <motion.header
-      id="hero"
-      className="flex items-center h-screen min-h-min w-full pb-32 gradient-bottom overflow-clip px-4"
-    >
-      <div
-        className="w-full max-w-[100rem] mx-auto z-0  will-change-transform"
-        // initial={{ opacity: 0, scale: 0.9, y: "50px" }}
-        // whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        // viewport={{ once: true }}
-        // transition={{
-        //   type: "tween",
-        //   duration: 0.5,
-        //   ease: "easeInOut",
-        //   delay: 2,
-        // }}
-        style={
-          {
-            //y: translateY, // Vincula el desplazamiento vertical
-            //scale: scale, // Vincula la escala al scroll
-            //opacity: opacity,
-          }
-        }
+    <>
+      <motion.header
+        id="hero"
+        ref={ref}
+        className={`relative flex items-center h-screen min-h-min w-full overflow-clip px-4 ${poppins.className}`}
+        style={{ scale: scaleHero }}
       >
-        <h3 className="text-center">Arsenio Lara - Web & Digital Designer</h3>
-        <h1 className="head_text">
-          <div className="relative overflow-hidden h-fit">
-            <motion.span
-              className="inline-block mr-8"
-              initial={{ y: 180 }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.9,
-                ease: "easeInOut",
-                delay: 2,
-              }}
+        {/* <SafariWindow /> */}
+        <div className="absolute top-0 left-0 inset-0 overflow-clip after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-80 origin-bottom">
+          <video
+            width="100%"
+            height="100%"
+            autoPlay
+            loop
+            muted
+            className="object-cover absolute inset-0 top-0 left-0 w-full h-full"
+          >
+            <source
+              src="assets/7534239-hd_1920_1080_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <motion.div
+          style={{ translateY: translateHeading }}
+          className="w-full will-change-transform fondoImagen bg-clip-text flex flex-col justify-center items-center h-full"
+        >
+          <h3 className="text-center text-white">
+            Arsenio Lara - Web & Digital Designer
+          </h3>
+          <div className="flex relative flex-row flex-wrap w-full max-w-[100rem] ">
+            <motion.div
+              // style={{ translateX: translateHeading }}
+              className="flex sm:gap-4 lg:gap-8 flex-wrap"
             >
-              Ideas
-            </motion.span>
-            <motion.span
-              className="inline-block"
-              initial={{ y: 180 }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.9,
-                ease: "easeInOut",
-                delay: 2.1,
-              }}
+              <motion.span
+                initial="initial"
+                animate="hovered"
+                className="head_text text-white inline-block overflow-clip"
+              >
+                <motion.div
+                  variants={{ initial: { y: "100%" }, hovered: { y: "0%" } }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0.25,
+                    duration: 1,
+                    delay: 2,
+                  }}
+                >
+                  Ideas
+                </motion.div>
+              </motion.span>
+              <motion.span
+                initial="initial"
+                animate="hovered"
+                className="head_text text-white inline-block overflow-clip"
+              >
+                <motion.div
+                  variants={{ initial: { y: "100%" }, hovered: { y: "0%" } }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0.25,
+                    duration: 1,
+                    delay: 2.05,
+                  }}
+                >
+                  Creativas
+                </motion.div>
+              </motion.span>
+            </motion.div>
+            <motion.div
+              // style={{ translateX: translateHeadingSegundo }}
+              className="flex sm:gap-4 lg:gap-8 flex-wrap lg:-mt-[2rem]"
             >
-              Creativas,
-            </motion.span>
+              <motion.span
+                initial="initial"
+                animate="hovered"
+                className="head_text text-white inline-block overflow-clip"
+              >
+                <motion.div
+                  className="leading-[1.2]"
+                  variants={{ initial: { y: "100%" }, hovered: { y: "0%" } }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0.25,
+                    duration: 1,
+                    delay: 2.1,
+                  }}
+                >
+                  Diseño
+                </motion.div>
+              </motion.span>
+              <motion.span
+                initial="initial"
+                animate="hovered"
+                className="head_text text-white inline-block overflow-clip "
+              >
+                <motion.div
+                  className="leading-[1.25] -mt-[.6rem] sm:mt-[0rem]"
+                  variants={{ initial: { y: "100%" }, hovered: { y: "0%" } }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0.25,
+                    duration: 1,
+                    delay: 2.15,
+                  }}
+                >
+                  Inteligente
+                </motion.div>
+              </motion.span>
+            </motion.div>
           </div>
-          <div className="relative overflow-hidden h-fit ">
-            <motion.span
-              className="inline-block mr-8"
-              initial={{ y: 180 }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.9,
-                ease: "easeInOut",
-                delay: 2.1,
-              }}
-            >
-              Diseño
-            </motion.span>
-            <motion.span
-              className="inline-block leading-tight"
-              initial={{ y: 180 }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "tween",
-                duration: 0.9,
-                ease: "easeInOut",
-                delay: 2.2,
-              }}
-            >
-              Inteligente.
-            </motion.span>
-          </div>
-        </h1>
-      </div>
-      <div className="gradient"></div>
-      <div className="fluid">
-        <video width="100%" height="100%" autoPlay loop muted>
-          <source src="assets/background.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </motion.header>
+          {/* <h1 className="head_text px-[2vw] xl:px-[8vw] 2xl:px-[12vw] text-white">
+            Ideas Creativas,
+            <br /> Diseño Inteligente.
+          </h1> */}
+        </motion.div>
+        {/* <div className="gradient"></div> */}
+        <div className="fluid">
+          <video width="100%" height="100%" autoPlay loop muted>
+            <source src="assets/background.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </motion.header>
+    </>
   );
 };
 

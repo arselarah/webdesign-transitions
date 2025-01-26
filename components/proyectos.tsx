@@ -6,13 +6,13 @@ const portfolioDataPY = [
   {
     title: "Málika Skin Care",
     description: "Diseño Web",
-    link: "https://arselara.com/webs/malika2.0/",
+    link: "https://malikaskincare.arselara.com/",
     imageClass: "malika-2",
   },
   {
     title: "Patrick Habanero",
     description: "Diseño Web",
-    link: "https://arselara.com/webs/patrickhabanero/",
+    link: "https://patrickhabanero.arselara.com/",
     imageClass: "patrick-habanero",
   },
   {
@@ -24,13 +24,13 @@ const portfolioDataPY = [
   {
     title: "Don Fermín",
     description: "Diseño Web",
-    link: "https://arselara.com/webs/tequila/",
+    link: "https://tequila.arselara.com/",
     imageClass: "tequila",
   },
   {
     title: "File Trust",
     description: "Diseño Web",
-    link: "https://arselara.com/webs/filetrust/",
+    link: "http://filetrust.arselara.com/",
     imageClass: "file-trust",
   },
   {
@@ -75,7 +75,7 @@ const Proyectos = () => {
                 <p>{item.description}</p>
                 <h4 className="text-gray-primario">{item.title}</h4>
               </div>
-              <div className="item-info_right">
+              <div className="bg-black text-white inline-block rounded-[50vw] p-[.7rem_1.5rem] border-[1px] border-black hover:bg-transparent hover:text-black transition-colors duration-300 text-[.8rem]">
                 <a href={item.link}>Visitar</a>
               </div>
             </div>

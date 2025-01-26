@@ -14,7 +14,10 @@ const links = [
 const NavBar = () => {
   return (
     <>
-      <header className="fixed top-0 left-0 z-10 bg-transparent w-full h-fit flex flex-row py-5 px-5 mix-blend-difference">
+      <header
+        className="fixed top-0 left-0 z-10 bg-transparent w-full h-fit flex flex-row py-5 px-5 mix-blend-exclusion
+      "
+      >
         <div className="navBar_container relative w-full flex flex-row items-center max-w-[100rem] h-6 mx-auto">
           <div className="logo-prueba w-[250px] relative z-20 flex flex-row justify-start">
             <Link className="pr-4" href="/" passHref>
@@ -25,17 +28,17 @@ const NavBar = () => {
             {links.map((link, index) => (
               <div
                 key={index}
-                className="relative efecto-hover overflow-hidden"
+                className="relative efecto-hover overflow-hidden bg-black backdrop-invert "
               >
                 <div className="ghost-link">
                   <Link
-                    className=" text-white uppercase font-medium text-[14px]"
+                    className=" text-black uppercase font-medium text-[14px] px-2"
                     href={link.href}
                   >
                     {link.label}
                   </Link>
                 </div>
-                <a className=" text-black uppercase font-medium text-[14px] mix-blend-difference">
+                <a className=" text-white uppercase font-medium text-[14px] px-2">
                   {link.label}
                 </a>
               </div>

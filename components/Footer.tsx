@@ -11,16 +11,16 @@ const links = [
 const Footer = () => {
   return (
     <footer
-      className="footer relative py-28 xl:py-56 px-5 w-full"
+      className="footer relative py-28 xl:py-56 px-5 w-full min-h-screen flex flex-col justify-center"
       id="contacto"
     >
-      <div className="centered max-w-[100rem] mx-auto xl:px-4">
+      <div className="centered w-full max-w-[100rem] mx-auto xl:px-4">
         <div className="grid justify-items-center">
           <h2 className="heading text-center">
             Ponte en contacto y trabajemos juntos
           </h2>
           <a
-            className="heading footer_mailto text-center block"
+            className="heading footer_mailto text-center block hover:underline"
             href="mailto:info@arselara.com"
           >
             info@arselara.com
@@ -30,25 +30,36 @@ const Footer = () => {
           <ul>
             {links.map((link, index) => (
               <li key={index}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href} className="hover:underline">
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
           <ul className="grow-0 flex justify-end flex-col">
             <li>
-              <a href="https://www.facebook.com/ArseLaraFotografia">Facebook</a>
+              <a
+                href="https://www.facebook.com/ArseLaraFotografia"
+                className="hover:underline"
+              >
+                Facebook
+              </a>
             </li>
             <li>
-              <a href="https://wa.me/528712352773">WhatsApp</a>
+              <a href="https://wa.me/528712352773" className="hover:underline">
+                WhatsApp
+              </a>
             </li>
             <li>
-              <a href="mailto:info@arselara.com">Mail</a>
+              <a href="mailto:info@arselara.com" className="hover:underline">
+                Mail
+              </a>
             </li>
           </ul>
         </nav>
         <div className="footer_page-copyright w-full pt-16">
           <p className="text-center">
-            ©2024 Arsenio Lara. Derechos Reservados.
+            ©2025 Arsenio Lara. Derechos Reservados.
           </p>
         </div>
       </div>
