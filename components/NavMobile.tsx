@@ -48,7 +48,7 @@ const NavMobile = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-0 z-10 h-16 flex items-center bg-transparent mix-blend-difference ">
+      <div className="fixed right-0 top-0 z-30 h-16 flex items-center bg-transparent mix-blend-difference ">
         <button
           className="relative w-10 h-10 md:hidden cursor-pointer mr-5 menu-icon hover:scale-110 ease-in duration-200 z-40 rounded-full bg-black "
           onClick={handleMenu}

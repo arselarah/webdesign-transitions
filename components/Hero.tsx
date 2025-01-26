@@ -29,7 +29,7 @@ const Hero = () => {
   const translateHeading = useTransform(
     scrollEffectSegundo,
     [0, 1],
-    ["0%", "20%"]
+    ["0%", "-10%"]
   );
   // const translateHeading = useTransform(
   //   scrollEffectSegundo,
@@ -67,7 +67,7 @@ const Hero = () => {
           </video>
         </div>
         <motion.div
-          style={{ translateY: translateHeading }}
+          style={{ translateY: translateHeading, scale: scaleHero }}
           className="w-full will-change-transform fondoImagen bg-clip-text flex flex-col justify-center items-center h-full"
         >
           <h3 className="text-center text-white">
@@ -161,11 +161,11 @@ const Hero = () => {
           </h1> */}
         </motion.div>
         {/* <div className="gradient"></div> */}
-        <div className="fluid">
+        {/* <div className="fluid">
           <video width="100%" height="100%" autoPlay loop muted>
             <source src="assets/background.mp4" type="video/mp4" />
           </video>
-        </div>
+        </div> */}
       </motion.header>
     </>
   );

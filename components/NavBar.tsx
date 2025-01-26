@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <>
       <header
-        className="fixed top-0 left-0 z-10 bg-transparent w-full h-fit flex flex-row py-5 px-5 mix-blend-exclusion
+        className="fixed top-0 left-0 z-30 bg-transparent w-full h-fit flex flex-row py-5 px-5 mix-blend-exclusion
       "
       >
         <div className="navBar_container relative w-full flex flex-row items-center max-w-[100rem] h-6 mx-auto">

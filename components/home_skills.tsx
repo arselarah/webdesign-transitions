@@ -19,7 +19,7 @@ const Home_Skills = () => {
         <div className="yointro_text-container pb-6">
           <h2 className="heading">Digital</h2>
         </div>
-        <div className="skills_grid pb-16 grow">
+        <div className="skills_grid pb-16 grow text-white opacity-50">
           <p>UX/UI</p>
           <p>E-Commerce</p>
           <p>Prototipado</p>
@@ -36,7 +36,7 @@ const Home_Skills = () => {
         <div className="yointro_text-container pb-6 grow md:flex md:justify-end">
           <h2 className="heading md:text-right">Diseño</h2>
         </div>
-        <div className="skills_grid pb-16">
+        <div className="skills_grid pb-16 text-white opacity-50">
           <p>Identidad</p>
           <p>Diseño Gráfico</p>
           <p>Redes Sociales</p>

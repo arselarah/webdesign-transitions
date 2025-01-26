@@ -48,9 +48,9 @@ const Home_Portafolio = () => {
               ></a>
             </div>
             <div className="item-info flex items-center justify-between text-white">
-              <div className="item-info_left">
-                <p>{item.description}</p>
-                <h4 className="text-gray-primario">{item.title}</h4>
+              <div className="item-info_left ">
+                <p className="text-white opacity-50">{item.description}</p>
+                <h4 className="text-white">{item.title}</h4>
               </div>
               <div className="item-info_right">
                 <a href={item.link}>Visitar Sitio Web</a>

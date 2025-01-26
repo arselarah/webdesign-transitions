@@ -5,6 +5,13 @@ import Home_Portafolio from "@/components/home_portafolio";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Head from "next/head";
 import { useRef } from "react";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export default function Home() {
   const refPortafolio = useRef(null);
@@ -107,7 +114,7 @@ export default function Home() {
                 // viewport={{ once: false }}
                 // transition={{ delay: 0.5, duration: 1.5, ease: "linear" }}
                 style={{ scale: scalePorta, skewY: skewPorta }}
-                className="carrusel_contenedor h-screen sticky top-0 overflow-hidden bg-[#282828]"
+                className="carrusel_contenedor h-screen sticky top-0 overflow-hidden bg-black z-20"
               >
                 <motion.div
                   className="items grid auto-cols-[50%] grid-flow-col"
@@ -115,7 +122,7 @@ export default function Home() {
                 >
                   <div className="titles h-screen w-[50vw] flex flex-col justify-center items-center">
                     <div className="yointro_text-container relative h-auto">
-                      <h3 className="text-sm xl:text-xl text-white">
+                      <h3 className="text-sm xl:text-xl text-white opacity-50">
                         Lo que hago
                       </h3>
                       <h2 className="heading text-white">
@@ -134,7 +141,7 @@ export default function Home() {
             >
               <div className="centered max-w-[100rem] mx-auto relative flex flex-col justify-center h-full">
                 <motion.div
-                  className="titles flex justify-start md:flex-row"
+                  className="titles flex justify-start md:flex-row border-b-[1px] border-white pb-4"
                   initial={{ opacity: 0, y: "50px" }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -152,14 +159,14 @@ export default function Home() {
                 </motion.div>
                 <motion.div
                   className=" 
-					w-full flex justify-end md:flex-row"
+					w-full flex justify-end md:flex-row pt-4"
                   initial={{ opacity: 0, y: "50px" }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
                 >
                   <div className="subtitles">
-                    <p className="text-gray-primario">
+                    <p className={`text-white opacity-50 ${poppins.className}`}>
                       Mi enfoque se centra en crear experiencias de usuario
                       excepcionales y desarrollar sitios web dinámicos mediante
                       el uso de tecnologías de vanguardia como HTML5, CSS3,
@@ -173,7 +180,7 @@ export default function Home() {
             {/* section-home-about */}
             <div
               ref={refChangeColor}
-              className="yointro section-what-Ido sticky top-0 h-screen py-28 xl:py-56 px-5 w-full bg-black text-white "
+              className="yointro section-what-Ido sticky top-0 h-screen py-28 xl:py-56 px-5 w-full bg-black text-white z-20"
             >
               <div className="centered max-w-[100rem] mx-auto h-full flex flex-col justify-center">
                 <div className="skills flex flex-wrap gap-10 justify-between relative">

@@ -32,7 +32,7 @@ export default function StickyCursor() {
 
   return (
     <motion.div
-      className="cursor"
+      className="cursor z-10"
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
     >
       <div className="gradient_transitions"></div>
