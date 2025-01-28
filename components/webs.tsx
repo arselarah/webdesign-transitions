@@ -110,12 +110,11 @@ const Card = ({
         ref={container}
         className={`cardContainer h-screen flex justify-center items-center sticky top-0 z-20 px-8 py-20 md:py-40 bg-cover bg-no-repeat bg-center ${poppins.className}`}
       >
-        
         <div
           className={`${imageClass} absolute bg-cover bg-no-repeat bg-center inset-0 top-0`}
         ></div>
         <div
-          className={`bg-black absolute inset-0 top-0 left-0 bg-opacity-75 vignette`}
+          className={`bg-black absolute inset-0 top-0 left-0 bg-opacity-75`}
         ></div>
         <motion.div
           className="card max-w-[80rem] w-full relative rounded-2xl flex flex-col md:flex-row items-center justify-center aspect-video bg-[#ede8e3] overflow-hidden h-full md:h-auto"
@@ -159,14 +158,24 @@ const Card = ({
 };
 const Webs = () => {
   const container = useRef(null);
+  const refBar = useRef(null);
   const { scrollYProgress: primerProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
+  const { scrollYProgress: scrollBar } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  const progreso = useTransform(scrollBar, [0, 1], ["0%", "100%"]);
 
   return (
     <div ref={container} className="relative w-full">
-      <div className="sticky top-[20px] left-0 h-2 w-full bg-white z-[30]"></div>
+      <motion.div
+        style={{ width: progreso }}
+        className="sticky top-0 left-0 h-2 barraProgress z-[30] translate-y-[calc(100vh-8px)] will-change-transform"
+      ></motion.div>
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (

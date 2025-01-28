@@ -534,7 +534,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .joy-center-web {
-  background-image: url(/assets/webs/joycenter_web.jpg);
+  background-image: url(/assets/webs/joycenter_web.webp);
 }
 
 .ingetrol {
@@ -542,7 +542,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .ingetrol-web {
-  background-image: url(/assets/webs/ingetrol_web.jpg);
+  background-image: url(/assets/webs/ingetrol_web.webp);
 }
 
 .malika {
@@ -550,7 +550,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .malika-web {
-  background-image: url(/assets/webs/malika_web.jpg);
+  background-image: url(/assets/webs/malika_web.webp);
 }
 
 .malika-2 {
@@ -570,7 +570,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .lux-web {
-  background-image: url(/assets/webs/lux_web.jpg);
+  background-image: url(/assets/webs/lux_web.webp);
 }
 
 .alh {
@@ -582,7 +582,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .betha-web {
-  background-image: url(/assets/webs/betha_web.jpg);
+  background-image: url(/assets/webs/betha_web.webp);
 }
 
 .neumosalud {
@@ -590,7 +590,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .neumosalud-web {
-  background-image: url(/assets/webs/neumosalud_web.jpg);
+  background-image: url(/assets/webs/neumosalud_web.webp);
 }
 
 .patrick-habanero {
@@ -1056,4 +1056,9 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
   width: 100%;
   height: 100%;
   background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.barraProgress {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
