@@ -17,6 +17,8 @@ module.exports = {
       fontSize: {
         clampacordeon: "clamp(1.8rem, 2.2vw, 2.8rem)", // Aquí defines tu valor de clamp
         clampP: "clamp(1.3rem,.9vw,1.5rem);", // Aquí defines tu valor de clamp
+        clampPCards: "clamp(.8rem,1vw,1.2rem);", // Aquí defines tu valor de clamp
+        clampHCards: "clamp(1.5rem, 1.8vw, 2.8rem)", // Aquí defines tu valor de clamp
       },
       backgroundImage: {
         "button-gradient":

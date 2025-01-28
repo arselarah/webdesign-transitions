@@ -4,6 +4,13 @@ import Graficos from "../components/graficos";
 import Proyectos from "../components/proyectos";
 import Page from "@/components/page";
 import Head from "next/head";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 const Portfolio = () => {
   return (
@@ -16,7 +23,9 @@ const Portfolio = () => {
       </Head>
 
       <Page>
-        <div className="hero-inner relative py-28 xl:py-56 px-5 w-full">
+        <div
+          className={`hero-inner relative py-28 xl:py-56 px-5 w-full flex items-end ${poppins.className}`}
+        >
           <div className="bg-animation"></div>
           <div className="hero_text-container max-w-[100rem] mx-auto xl:px-4">
             <div className=" text-container_box scroll-reveal-loading">
@@ -31,11 +40,26 @@ const Portfolio = () => {
           </div>
           <div className="colorido"></div>
         </div>
-        <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
-            <div className="titles flex justify-start md:flex-row col-span-4">
-              <div className="yointro_text-container">
-                <h3 className="text-sm xl:text-xl">Lo que hago</h3>
+        <div className="yointro section-home-portfolio w-full relative overflow-clip flex flex-col items-center bg-[#282828] pt-[10vh]">
+          {/* <div className="absolute top-0 left-0 inset-0 overflow-clip after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[#282828] after:backdrop-blur-3xl after:bg-opacity-70 origin-bottom">
+            <video
+              width="100%"
+              height="100%"
+              autoPlay
+              loop
+              muted
+              className="object-cover absolute inset-0 top-0 left-0 w-full h-full"
+            >
+              <source
+                src="assets/videos/4514642-hd_1280_720_25fps.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div> */}
+          <div className="centered grid_portfolio w-full relative">
+            <div className="titles flex justify-center md:flex-row col-span-4 w-full h-[10vw] items-center relative z-40 pb-[10vh]">
+              <div className="yointro_text-container text-white">
+                <h3 className="text-sm xl:text-xl opacity-50">Lo que hago</h3>
                 <h2 className="heading">Diseño y Desarrollo Web</h2>
               </div>
             </div>

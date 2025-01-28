@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 const portfolioDataGD = [
   {
@@ -23,7 +30,7 @@ const Graficos = () => {
       {portfolioDataGD.map((item, index) => (
         <motion.div
           key={index}
-          className="portfolio-items_container"
+          className={`portfolio-items_container ${poppins.className}`}
           initial={{ opacity: 0, scale: 0.9, y: "50px" }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}

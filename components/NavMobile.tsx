@@ -48,9 +48,9 @@ const NavMobile = () => {
 
   return (
     <>
-      <div className="fixed right-0 top-0 z-30 h-16 flex items-center bg-transparent mix-blend-difference ">
+      <div className="fixed right-0 top-0 z-50 h-16 flex items-center bg-transparent mix-blend-difference ">
         <button
-          className="relative w-10 h-10 md:hidden cursor-pointer mr-5 menu-icon hover:scale-110 ease-in duration-200 z-40 rounded-full bg-black "
+          className="relative w-10 h-10 md:hidden cursor-pointer mr-5 menu-icon hover:scale-110 ease-in duration-200 z-[60] rounded-full bg-black "
           onClick={handleMenu}
         >
           <div className="flex flex-col justify-between h-5 items-center">
@@ -60,7 +60,7 @@ const NavMobile = () => {
           </div>
         </button>
       </div>
-      <div className="fixed top-0 left-0 w-full h-dvh z-10 md:hidden mobile-menu origin-top will-change-transform">
+      <div className="fixed top-0 left-0 w-full h-dvh z-50 md:hidden mobile-menu origin-top will-change-transform">
         <div className="flex flex-col w-full h-full">
           <div className="flex justify-between h-16 px-5 items-center">
             <div className="origin-bottom overflow-hidden menu-title">
