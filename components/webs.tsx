@@ -110,6 +110,7 @@ const Card = ({
         ref={container}
         className={`cardContainer h-screen flex justify-center items-center sticky top-0 z-20 px-8 py-20 md:py-40 bg-cover bg-no-repeat bg-center ${poppins.className}`}
       >
+        
         <div
           className={`${imageClass} absolute bg-cover bg-no-repeat bg-center inset-0 top-0`}
         ></div>
@@ -165,6 +166,7 @@ const Webs = () => {
 
   return (
     <div ref={container} className="relative w-full">
+      <div className="sticky top-[20px] left-0 h-2 w-full bg-white z-[30]"></div>
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (
