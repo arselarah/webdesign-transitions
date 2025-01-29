@@ -120,7 +120,7 @@ const Card = ({
           className={`bg-especial absolute inset-0 top-0 left-0 bg-opacity-75`}
         ></div>
         <motion.div
-          className="card max-w-[80rem] w-full relative rounded-2xl flex flex-col md:flex-row items-center justify-center aspect-video bg-[#ede8e3] overflow-hidden h-full md:h-auto"
+          className="card max-w-[80rem] w-full relative flex flex-col md:flex-row items-center justify-center aspect-video bg-[#ede8e3] overflow-hidden h-full md:h-auto"
           style={{
             scale,
             //top: `calc(0% + ${i * 1}rem)`,
@@ -135,26 +135,26 @@ const Card = ({
               />
             </Link>
           </div>
-          <div className="flex flex-col justify-between w-full md:w-1/2 p-7 md:p-16 h-full rounded-2xl">
+          <div className="flex flex-col justify-between w-full md:w-1/2 p-7 md:p-16 h-full ">
             <div className="flex flex-col justify-start h-full pb-8 gap-8 md:gap-16">
               <h3 className="text-black font-medium text-2xl text-clampHCards">
                 {title}
               </h3>
               <motion.div
-                                initial={{
-                                  width: "0%",
-                                }}
-                                whileInView={{
-                                  width: "100%",
-                                }}
-                                viewport={{ once: false }}
-                                transition={{
-                                  delay: 0.4,
-                                  duration: 0.5,
-                                  ease: "linear",
-                                }}
-                                className="w-full h-[1px] bg-black relative"
-                              />
+                initial={{
+                  width: "0%",
+                }}
+                whileInView={{
+                  width: "100%",
+                }}
+                viewport={{ once: false }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.5,
+                  ease: "linear",
+                }}
+                className="w-full h-[1px] bg-black relative"
+              />
               <p className="text-gray-primario font-light text-clampPCards opacity-50">
                 {text}
               </p>

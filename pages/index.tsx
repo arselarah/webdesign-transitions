@@ -6,6 +6,7 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import Head from "next/head";
 import { useRef } from "react";
 import { Poppins } from "next/font/google";
+import LineaHorizontal from "@/components/LineaHorizontal";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -157,17 +158,7 @@ export default function Home() {
                     </h2>
                   </div>
                 </motion.div>
-                <motion.div
-                  initial={{
-                    clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
-                  }}
-                  whileInView={{
-                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                  }}
-                  viewport={{ once: false }}
-                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-                  className="w-full h-[1px] bg-white relative"
-                ></motion.div>
+                <LineaHorizontal />
                 <motion.div
                   className=" 
 					w-full flex justify-end md:flex-row pt-8"

@@ -77,11 +77,11 @@ label {
 }
 
 .cursor {
-  width: 65vh;
-  height: 65vh;
+  width: 28vw;
+  height: 28vw;
   border-radius: 50%;
   position: fixed;
-  opacity: 0.2;
+  /* opacity: 0.9; */
   background-color: #ff3cac;
   background-image: linear-gradient(
     225deg,
@@ -94,7 +94,8 @@ label {
   transition: all;
   overflow: hidden;
   pointer-events: none;
-  filter: invert(100%);
+  /* filter: blur(2px); */
+  /* backdrop-filter: invert(100%); */
 }
 
 @keyframes random-bg {

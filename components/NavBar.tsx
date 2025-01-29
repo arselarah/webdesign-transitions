@@ -38,9 +38,12 @@ const NavBar = () => {
                     {link.label}
                   </Link>
                 </div>
-                <a className=" text-white uppercase font-medium text-[14px] px-2">
+                <Link
+                  className=" text-white uppercase font-medium text-[14px] px-2"
+                  href={link.href}
+                >
                   {link.label}
-                </a>
+                </Link>
               </div>
             ))}
           </div>

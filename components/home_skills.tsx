@@ -3,23 +3,18 @@ import React from "react";
 //import { useRef } from "react";
 // import { motion, useInView } from "framer-motion";
 import { motion } from "framer-motion";
+import LineaHorizontal from "./LineaHorizontal";
+import LineaVertical from "./LineaVertical";
 
 const Home_Skills = () => {
   //const ref = useRef(null);
   //const isInView = useInView(ref, { once: true });
   return (
     <>
-      <motion.div
-        initial={{
-          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
-        }}
-        whileInView={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        }}
-        viewport={{ once: false }}
-        transition={{ delay: 0.5, duration: 0.5, ease: "linear" }}
-        className="w-full h-[1px] bg-white absolute -top-8 hidden md:flex"
-      />
+      <article className="absolute -top-8 left-0 w-full h-1 hidden md:flex">
+        <LineaHorizontal />
+      </article>
+
       <motion.div
         className="flex flex-col md:flex-row md:gap-16 content-start "
         initial={{ opacity: 0 }}
@@ -38,28 +33,13 @@ const Home_Skills = () => {
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{
-          clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
-        }}
-        whileInView={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        }}
-        viewport={{ once: false }}
-        transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-        className="w-[1px] h-full bg-white relative hidden md:flex"
-      />
-      <motion.div
-        initial={{
-          clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
-        }}
-        whileInView={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-        }}
-        viewport={{ once: false }}
-        transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-        className="w-full h-[1px] bg-white relative flex md:hidden"
-      />
+      <article className="flex md:hidden w-full h-1">
+        <LineaHorizontal />
+      </article>
+      <article className="hidden md:flex w-1 h-full">
+        <LineaVertical />
+      </article>
+
       <motion.div
         className="flex flex-col md:flex-row md:gap-16"
         initial={{ opacity: 0 }}

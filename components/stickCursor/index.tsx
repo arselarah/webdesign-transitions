@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function StickyCursor() {
-  const cursorSize = 400;
+  const cursorSize = 300;
 
   const mouse = {
     x: useMotionValue(0),
@@ -32,7 +32,7 @@ export default function StickyCursor() {
 
   return (
     <motion.div
-      className="cursor z-10"
+      className="cursor z-50 invert opacity-5 backdrop-blur-3xl"
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
     >
       <div className="gradient_transitions"></div>
