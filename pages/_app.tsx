@@ -10,6 +10,7 @@ import { setupSmoothScroll, destroySmoothScroll } from "@/utils/smooth-scroll";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Contador from "@/components/Contador";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -43,16 +44,69 @@ const App = ({ Component, pageProps }: AppProps) => {
       <NavMobile />
       <StickyCursor />
       <AnimatePresence mode="wait">
+        {/* <motion.div
+          initial={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          }}
+          animate={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+          }}
+          exit={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+          }}
+          transition={{ delay: 3, duration: 1.5, ease: "backInOut" }}
+          className="bg-black fixed inset-0 z-[9999]"
+        /> */}
+        <motion.div
+          initial={{
+            //opacity: 1,
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          }}
+          animate={{
+            //opacity: 0,
+            clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+          }}
+          exit={{
+            //opacity: 0,
+            clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+          }}
+          transition={{ delay: 3, duration: 1.5, ease: "backInOut" }}
+          className="bg-black fixed inset-0 z-[9999] flex flex-col justify-end items-start p-16 overflow-clip"
+        >
+          <div className="flex flex-col w-full overflow-hidden gap-8">
+            <div className={`flex-initial w-fit ${poppins.className}`}>
+              <Contador />
+            </div>
+            <div className="w-full grow flex justify-start items-center bg-white bg-opacity-20 rounded-full overflow-clip">
+              <motion.div
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 3, ease: "linear" }}
+                className=" h-4 bg-white relative"
+              ></motion.div>
+            </div>
+          </div>
+        </motion.div>
         <motion.div
           key={router.route}
+          className="bg-[#ede8e3]"
           initial="initialState"
           animate="animateState"
           exit="exitstate"
-          transition={{ duration: 0.5 }}
+          transition={{ delay: 0, duration: 1 }}
           variants={{
-            initialState: { opacity: 0 },
-            animateState: { opacity: 1 },
-            exitstate: {},
+            initialState: {
+              //opacity: 0,
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+            },
+            animateState: {
+              //opacity: 1,
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+            },
+            exitstate: {
+              clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+              //opacity: 0,
+            },
           }}
         >
           <Component

@@ -53,7 +53,7 @@ const Portfolio = () => {
           </div>
         </div>
         <motion.div
-          style={{ scale: scalePort }}
+          style={{ scale: scalePort, y: yPort }}
           className="yointro section-home-portfolio mx-auto relative flex flex-col items-center bg-[#282828] pt-[10vh] origin-center h-auto overflow-clip"
         >
           <div className="centered grid_portfolio w-full relative ">

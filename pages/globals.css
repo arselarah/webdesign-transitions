@@ -33,7 +33,7 @@ html {
 }
 
 body {
-  background-color: #ede8e3;
+  background-color: #000;
   /* background-color:##ede8e3; */
   transition-property: filter background;
   transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);

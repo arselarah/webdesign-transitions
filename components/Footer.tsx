@@ -11,7 +11,7 @@ const links = [
 const Footer = () => {
   return (
     <footer
-      className="footer relative py-28 xl:py-56 px-5 w-full min-h-screen flex flex-col justify-center"
+      className="footer relative py-28 xl:py-56 px-5 w-full min-h-screen flex flex-col justify-center bg-[#ede8e3]"
       id="contacto"
     >
       <div className="centered w-full max-w-[100rem] mx-auto xl:px-4">
