@@ -10,9 +10,20 @@ const Home_Skills = () => {
   return (
     <>
       <motion.div
+        initial={{
+          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+        }}
+        whileInView={{
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.5, duration: 0.5, ease: "linear" }}
+        className="w-full h-[1px] bg-white absolute -top-8 hidden md:flex"
+      />
+      <motion.div
         className="flex flex-col md:flex-row md:gap-16 content-start "
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ delay: 0.25, duration: 1.5, ease: "linear" }}
         viewport={{ once: true }}
       >
@@ -26,10 +37,33 @@ const Home_Skills = () => {
           <p>SEO</p>
         </div>
       </motion.div>
+
+      <motion.div
+        initial={{
+          clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+        }}
+        whileInView={{
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+        className="w-[1px] h-full bg-white relative hidden md:flex"
+      />
+      <motion.div
+        initial={{
+          clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+        }}
+        whileInView={{
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        }}
+        viewport={{ once: false }}
+        transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+        className="w-full h-[1px] bg-white relative flex md:hidden"
+      />
       <motion.div
         className="flex flex-col md:flex-row md:gap-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ delay: 0.45, duration: 1.5, ease: "linear" }}
         viewport={{ once: true }}
       >

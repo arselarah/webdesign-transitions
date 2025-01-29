@@ -65,8 +65,8 @@ const Proyectos = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.2 * (index + 1),
-            duration: 0.7,
+            delay: 0.1 * (index + 1),
+            duration: 0.5,
             ease: "linear",
           }}
         >

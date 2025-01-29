@@ -36,7 +36,7 @@ const Graficos = () => {
           viewport={{ once: true }}
           transition={{
             delay: 0.2 * (index + 1),
-            duration: 0.7,
+            duration: 0.5,
             ease: "linear",
           }}
         >

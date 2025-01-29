@@ -47,7 +47,7 @@ const Home_Portafolio = () => {
                 className="absolute top-0 left-0 w-full h-full z-[1]"
               ></a>
             </div>
-            <div className="item-info flex items-center justify-between text-white">
+            <div className="item-info flex flex-col md:flex-row items-start md:items-center justify-between text-white">
               <div className="item-info_left ">
                 <p className="text-white opacity-50">{item.description}</p>
                 <h4 className="text-white">{item.title}</h4>

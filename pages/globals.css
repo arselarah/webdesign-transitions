@@ -1059,6 +1059,33 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .barraProgress {
-  background-color: #85ffbd;
-  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  /* background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
+  background-color: #ff0088;
+  /* background-image: radial-gradient(transparent 1px, #000 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  mask: linear-gradient(#000 60%, transparent);
+  opacity: 0.5; */
 }
+
+.cardContainer {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
+/* .bg-especial {
+  background-color: transparent;
+  background-image: radial-gradient(transparent 1px, #000 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  mask: linear-gradient(#000 60%, transparent);
+  opacity: 0.5;
+} */

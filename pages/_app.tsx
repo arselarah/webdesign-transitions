@@ -13,10 +13,23 @@ const poppins = Poppins({
 });
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+
   useEffect(() => {
     setupSmoothScroll();
   }, []);
-  const router = useRouter();
+  // Restablecer el scroll al inicio de la página cada vez que cambie la ruta
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <AnimatePresence mode="wait">
       <motion.div key={router.pathname}>

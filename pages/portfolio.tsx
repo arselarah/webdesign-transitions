@@ -5,6 +5,7 @@ import Proyectos from "../components/proyectos";
 import Page from "@/components/page";
 import Head from "next/head";
 import { Poppins } from "next/font/google";
+import { motion } from "framer-motion";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -70,12 +71,27 @@ const Portfolio = () => {
         </div>{" "}
         {/* section-home-portfolio */}
         <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full colorido-inner">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
-            <div className="titles flex justify-start md:flex-row col-span-4">
+          <div className="centered grid_portfolio max-w-[100rem] mx-auto flex flex-col gap-4 md:gap-16">
+            <div className="titles flex flex-col w-full">
               <div className="yointro_text-container">
                 <h3 className="text-sm xl:text-xl">Lo que hago</h3>
                 <h2 className="heading">Diseño Gráfico</h2>
               </div>
+              <motion.div
+                initial={{
+                  width: "0%",
+                }}
+                whileInView={{
+                  width: "100%",
+                }}
+                viewport={{ once: false }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.5,
+                  ease: "linear",
+                }}
+                className="w-full h-[1px] bg-black relative mt-4"
+              />
             </div>
             <div className="portfolio-items grid gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3 col-span-4">
               <Graficos />
@@ -85,13 +101,29 @@ const Portfolio = () => {
         </div>{" "}
         {/* section-home-portfolio */}
         <div className="yointro section-home-portfolio relative py-28 xl:py-56 px-5 w-full colorido-inner">
-          <div className="centered grid_portfolio max-w-[100rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-16">
-            <div className="titles flex justify-start md:flex-row col-span-4">
+          <div className="centered grid_portfolio max-w-[100rem] mx-auto flex flex-col gap-4 md:gap-16">
+            <div className="titles flex flex-col w-full">
               <div className="yointro_text-container">
                 <h3 className="text-sm xl:text-xl">Lo que hago</h3>
                 <h2 className="heading">Proyectos</h2>
               </div>
+              <motion.div
+                initial={{
+                  width: "0%",
+                }}
+                whileInView={{
+                  width: "100%",
+                }}
+                viewport={{ once: false }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.5,
+                  ease: "linear",
+                }}
+                className="w-full h-[1px] bg-black relative mt-4"
+              />
             </div>
+
             <div className="portfolio-items grid gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3 col-span-4">
               <Proyectos />
             </div>

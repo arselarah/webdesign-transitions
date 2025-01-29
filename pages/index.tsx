@@ -141,9 +141,9 @@ export default function Home() {
             >
               <div className="centered max-w-[100rem] mx-auto relative flex flex-col justify-center h-full">
                 <motion.div
-                  className="titles flex justify-start md:flex-row border-b-[1px] border-white pb-4"
-                  initial={{ opacity: 0, y: "50px" }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  className="titles flex justify-start md:flex-row reltive pb-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
                 >
@@ -158,10 +158,21 @@ export default function Home() {
                   </div>
                 </motion.div>
                 <motion.div
+                  initial={{
+                    clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+                  }}
+                  whileInView={{
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                  }}
+                  viewport={{ once: false }}
+                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                  className="w-full h-[1px] bg-white relative"
+                ></motion.div>
+                <motion.div
                   className=" 
-					w-full flex justify-end md:flex-row pt-4"
-                  initial={{ opacity: 0, y: "50px" }}
-                  whileInView={{ opacity: 1, y: 0 }}
+					w-full flex justify-end md:flex-row pt-8"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
                 >

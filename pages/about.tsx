@@ -70,6 +70,23 @@ const About = () => {
     },
   ];
 
+  const diplomados = [
+    {
+      titulo: "Diplomado de Marketing Digital",
+      contenido:
+        "Impartido en Guadalajara por Jaime Bravo (Marketing Mundial y Asociación Latinoamericana de Usuarios de Internet SC).",
+    },
+    {
+      titulo: "Community Manager Guadalajara",
+      contenido: "Impartido en Guadalajara por Roberto Corona (TEINUX).",
+    },
+    {
+      titulo: "Google UX Design Certificate (Cursando)",
+      contenido:
+        "Desarrollado por Google. Incorpora los aspectos básicos del diseño de UX: cómo lograr empatía con los usuarios, crear wireframes y prototipos, y realizar investigaciones para probar los diseños.",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -179,8 +196,23 @@ const About = () => {
                   {accordionData.map((item, index) => (
                     <div
                       key={index}
-                      className="accordion-item relative w-full border-t-[1px] border-slate-500 py-8"
+                      className="accordion-item relative w-full py-8"
                     >
+                      <motion.div
+                        initial={{
+                          width: "0%",
+                        }}
+                        whileInView={{
+                          width: "100%",
+                        }}
+                        viewport={{ once: false }}
+                        transition={{
+                          delay: 0.4,
+                          duration: 0.5,
+                          ease: "linear",
+                        }}
+                        className="w-full h-[1px] bg-black relative mb-4"
+                      />
                       <button
                         className={`accordion-header text-clampacordeon font-medium text-center w-full flex items-center justify-between`}
                         onClick={() => toggleAccordion(index)}
@@ -224,6 +256,21 @@ const About = () => {
                     </div>
                   ))}
                 </motion.article>
+                <motion.div
+                  initial={{
+                    width: "0%",
+                  }}
+                  whileInView={{
+                    width: "100%",
+                  }}
+                  viewport={{ once: false }}
+                  transition={{
+                    delay: 0.4,
+                    duration: 0.5,
+                    ease: "linear",
+                  }}
+                  className="w-full h-[1px] bg-black relative mt-4"
+                />
               </div>
             </div>
           </div>{" "}
@@ -292,55 +339,57 @@ const About = () => {
                     </div>
                   </div>
                 </motion.div>
+                {diplomados.map((diplomado, index) => (
+                  <motion.div
+                    key={index}
+                    className="skills_grid-experiencia"
+                    initial={{ opacity: 0, y: "50px" }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
+                  >
+                    <motion.div
+                      initial={{
+                        width: "0%",
+                      }}
+                      whileInView={{
+                        width: "100%",
+                      }}
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.4,
+                        duration: 0.5,
+                        ease: "linear",
+                      }}
+                      className="w-full h-[1px] bg-black relative "
+                    />
+                    <div className="experiencia-item py-16">
+                      <div className="col-span-2">
+                        <h3 className="text-clampacordeon font-medium">
+                          {diplomado.titulo}
+                        </h3>
+                      </div>
+                      <div className="col-span-2 subtitles">
+                        <p className="text-gray-500">{diplomado.contenido}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
                 <motion.div
-                  className="skills_grid-experiencia"
-                  initial={{ opacity: 0, y: "50px" }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.5, ease: "linear" }}
-                >
-                  <div className="experiencia-item py-16 border-t-[1px] border-slate-500">
-                    <div className="col-span-2">
-                      <h3 className="text-clampacordeon font-medium">
-                        Diplomado de Marketing Digital
-                      </h3>
-                    </div>
-                    <div className="col-span-2 subtitles">
-                      <p className="text-gray-500">
-                        Impartido en Guadalajara por Jaime Bravo (Marketing
-                        Mundial y Asociación Latinoamericana de Usuarios de
-                        Internet SC).
-                      </p>
-                    </div>
-                  </div>
-                  <div className="experiencia-item py-16 border-y-[1px] border-slate-500 ">
-                    <div className="col-span-2">
-                      <h3 className="text-clampacordeon font-medium">
-                        Community Manager Guadalajara
-                      </h3>
-                    </div>
-                    <div className="col-span-2 subtitles">
-                      <p className="text-gray-500">
-                        Impartido en Guadalajara por Roberto Corona (TEINUX).
-                      </p>
-                    </div>
-                  </div>
-                  <div className="experiencia-item py-16 border-b-[1px] border-slate-500">
-                    <div className="col-span-2">
-                      <h3 className="text-clampacordeon font-medium">
-                        Google UX Design Certificate (Cursando)
-                      </h3>
-                    </div>
-                    <div className="col-span-2 subtitles">
-                      <p className="text-gray-500">
-                        Desarrollado por Google. Incorpora los aspectos básicos
-                        del diseño de UX: cómo lograr empatía con los usuarios,
-                        crear wireframes y prototipos, y realizar
-                        investigaciones para probar los diseños.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
+                  initial={{
+                    width: "0%",
+                  }}
+                  whileInView={{
+                    width: "100%",
+                  }}
+                  viewport={{ once: false }}
+                  transition={{
+                    delay: 0.4,
+                    duration: 0.5,
+                    ease: "linear",
+                  }}
+                  className="w-full h-[1px] bg-black relative"
+                />
               </div>
             </div>
           </div>{" "}

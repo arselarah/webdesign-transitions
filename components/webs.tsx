@@ -108,19 +108,22 @@ const Card = ({
     <>
       <div
         ref={container}
-        className={`cardContainer h-screen flex justify-center items-center sticky top-0 z-20 px-8 py-20 md:py-40 bg-cover bg-no-repeat bg-center ${poppins.className}`}
+        className={`cardContainer h-screen flex justify-center items-center sticky top-0 px-8 py-20 md:py-40 bg-cover bg-no-repeat bg-center ${poppins.className} will-change-transform`}
+        style={{
+          zIndex: `${i + 20}`,
+        }}
       >
         <div
           className={`${imageClass} absolute bg-cover bg-no-repeat bg-center inset-0 top-0`}
         ></div>
         <div
-          className={`bg-black absolute inset-0 top-0 left-0 bg-opacity-75`}
+          className={`bg-especial absolute inset-0 top-0 left-0 bg-opacity-75`}
         ></div>
         <motion.div
           className="card max-w-[80rem] w-full relative rounded-2xl flex flex-col md:flex-row items-center justify-center aspect-video bg-[#ede8e3] overflow-hidden h-full md:h-auto"
           style={{
             scale,
-            top: `calc(0% + ${i * 1}rem)`,
+            //top: `calc(0% + ${i * 1}rem)`,
           }}
         >
           <div className="w-full md:w-1/2 bg-gray-500 h-full relative overflow-clip">
@@ -133,10 +136,25 @@ const Card = ({
             </Link>
           </div>
           <div className="flex flex-col justify-between w-full md:w-1/2 p-7 md:p-16 h-full rounded-2xl">
-            <div className="flex flex-col justify-between h-full pb-8">
+            <div className="flex flex-col justify-start h-full pb-8 gap-8 md:gap-16">
               <h3 className="text-black font-medium text-2xl text-clampHCards">
                 {title}
               </h3>
+              <motion.div
+                                initial={{
+                                  width: "0%",
+                                }}
+                                whileInView={{
+                                  width: "100%",
+                                }}
+                                viewport={{ once: false }}
+                                transition={{
+                                  delay: 0.4,
+                                  duration: 0.5,
+                                  ease: "linear",
+                                }}
+                                className="w-full h-[1px] bg-black relative"
+                              />
               <p className="text-gray-primario font-light text-clampPCards opacity-50">
                 {text}
               </p>
@@ -158,7 +176,7 @@ const Card = ({
 };
 const Webs = () => {
   const container = useRef(null);
-  const refBar = useRef(null);
+  //const refBar = useRef(null);
   const { scrollYProgress: primerProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -174,19 +192,22 @@ const Webs = () => {
     <div ref={container} className="relative w-full">
       <motion.div
         style={{ width: progreso }}
-        className="sticky top-0 left-0 h-2 barraProgress z-[30] translate-y-[calc(100vh-8px)] will-change-transform"
+        className="sticky top-0 left-0 h-4 barraProgress z-[30] translate-y-[calc(100vh-12px)] will-change-transform opacity-50"
       ></motion.div>
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
+        const isVisible = i <= 6; // Mostrar solo las primeras 4 tarjetas
         return (
-          <Card
-            key={i}
-            i={i}
-            {...project}
-            progress={primerProgress}
-            range={[i * 0.1, 1]}
-            targetScale={targetScale}
-          />
+          isVisible && (
+            <Card
+              key={i}
+              i={i}
+              {...project}
+              progress={primerProgress}
+              range={[i * 0.1, 1]}
+              targetScale={targetScale}
+            />
+          )
         );
       })}
     </div>
