@@ -1,116 +1,86 @@
-import { AnimatePresence } from "framer-motion";
-import { AppProps } from "next/app";
-import "./globals.css";
-import { Poppins } from "next/font/google";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import StickyCursor from "@/components/stickCursor";
-import NavMobile from "@/components/NavMobile";
-import { setupSmoothScroll, destroySmoothScroll } from "@/utils/smooth-scroll";
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import Contador from "@/components/Contador";
-import Head from "next/head";
+import { AnimatePresence } from 'framer-motion'
+import { AppProps } from 'next/app'
+import './globals.css'
+import { Poppins } from 'next/font/google'
+import NavBar from '@/components/NavBar'
+import Footer from '@/components/Footer'
+import StickyCursor from '@/components/stickCursor'
+import NavMobile from '@/components/NavMobile'
+import { setupSmoothScroll, destroySmoothScroll } from '@/utils/smooth-scroll'
+import { useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
-});
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  variable: '--font-poppins'
+})
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
+  const router = useRouter()
   useEffect(() => {
-    setupSmoothScroll(); // Inicializar Lenis al cargar
+    setupSmoothScroll() // Inicializar Lenis al cargar
 
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
     }
 
     const handleRouteChange = () => {
-      destroySmoothScroll(); // 🔴 Detener Lenis antes de cambiar de página
-      window.scrollTo(0, 0); // 🔄 Resetear scroll manualmente
-      setTimeout(() => setupSmoothScroll(), 3000); // 🟢 Reiniciar Lenis después de un pequeño delay
-    };
+      destroySmoothScroll() // 🔴 Detener Lenis antes de cambiar de página
+      window.scrollTo(0, 0) // 🔄 Resetear scroll manualmente
+      setTimeout(() => setupSmoothScroll(), 3000) // 🟢 Reiniciar Lenis después de un pequeño delay
+    }
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router]);
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router])
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <NavBar />
       <NavMobile />
       <StickyCursor />
-      <AnimatePresence mode="wait">
-        {/* <motion.div
-          initial={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-          }}
-          animate={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-          }}
-          exit={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-          }}
-          transition={{ delay: 3, duration: 1.5, ease: "backInOut" }}
-          className="bg-black fixed inset-0 z-[9999]"
-        /> */}
+      <AnimatePresence mode='wait'>
         <motion.div
           initial={{
-            //opacity: 1,
-            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)'
           }}
           animate={{
-            //opacity: 0,
-            clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
           }}
           exit={{
-            //opacity: 0,
-            clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
           }}
-          transition={{ delay: 3, duration: 1.5, ease: "backInOut" }}
-          className="bg-black fixed inset-0 z-[48] flex flex-col justify-end items-start p-16 overflow-clip"
-        >
-          <div className="flex flex-col w-full overflow-hidden gap-8">
-            <div className={`flex-initial w-fit ${poppins.className}`}>
-              <Contador />
-            </div>
-            <div className="w-full grow flex justify-start items-center bg-white bg-opacity-20 rounded-full overflow-clip">
-              <motion.div
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 3, ease: "linear" }}
-                className=" h-4 bg-white relative"
-              ></motion.div>
-            </div>
-          </div>
-        </motion.div>
+          transition={{ delay: 0.5, duration: 1, ease: 'backInOut' }}
+          className='fixed inset-0 z-[30] bg-black'
+        />
+
         <motion.div
           key={router.route}
-          className="bg-[#ede8e3]"
-          initial="initialState"
-          animate="animateState"
-          exit="exitstate"
-          transition={{ delay: 0, duration: 0.3 }}
+          className='relative bg-[#ede8e3]'
+          initial='initialState'
+          animate='animateState'
+          exit='exitstate'
+          transition={{ delay: 0, duration: 0.5 }}
           variants={{
             initialState: {
-              opacity: 0,
-              //clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+              //opacity: 0,
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
             },
             animateState: {
-              opacity: 1,
-              //clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+              //opacity: 1,
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
             },
             exitstate: {
-              //clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
-              opacity: 0,
-            },
+              clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
+              opacity: 0
+            }
           }}
         >
           <Component
@@ -122,7 +92,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </AnimatePresence>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
