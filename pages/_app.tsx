@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Contador from "@/components/Contador";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [router]);
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NavBar />
       <NavMobile />
       <StickyCursor />
@@ -71,7 +75,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
           }}
           transition={{ delay: 3, duration: 1.5, ease: "backInOut" }}
-          className="bg-black fixed inset-0 z-[9999] flex flex-col justify-end items-start p-16 overflow-clip"
+          className="bg-black fixed inset-0 z-[48] flex flex-col justify-end items-start p-16 overflow-clip"
         >
           <div className="flex flex-col w-full overflow-hidden gap-8">
             <div className={`flex-initial w-fit ${poppins.className}`}>
@@ -93,19 +97,19 @@ const App = ({ Component, pageProps }: AppProps) => {
           initial="initialState"
           animate="animateState"
           exit="exitstate"
-          transition={{ delay: 0, duration: 1 }}
+          transition={{ delay: 0, duration: 0.3 }}
           variants={{
             initialState: {
-              //opacity: 0,
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+              opacity: 0,
+              //clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
             },
             animateState: {
-              //opacity: 1,
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+              opacity: 1,
+              //clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
             },
             exitstate: {
-              clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
-              //opacity: 0,
+              //clipPath: "polygon(0 50%, 100% 50%, 100% 50%, 0 50%)",
+              opacity: 0,
             },
           }}
         >
