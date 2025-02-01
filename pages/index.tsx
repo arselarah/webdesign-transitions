@@ -20,7 +20,7 @@ export default function Home() {
   const { scrollYProgress: horizontalScroll } = useScroll({
     target: refPortafolio
   })
-  const x = useTransform(horizontalScroll, [0, 1], ['0%', '-100%'])
+  const x = useTransform(horizontalScroll, [0, 1], ['0%', '-300%'])
   const { scrollYProgress: ocultarScroll } = useScroll({
     target: refPortafolio,
     offset: ['start end', '.3 end']
@@ -117,10 +117,10 @@ export default function Home() {
                 className='carrusel_contenedor sticky top-0 z-20 h-screen overflow-hidden bg-black'
               >
                 <motion.div
-                  className='items grid auto-cols-[50%] grid-flow-col'
+                  className='items grid auto-cols-[100%] grid-flow-col'
                   style={{ x }}
                 >
-                  <div className='titles flex h-screen w-[50vw] flex-col items-center justify-center'>
+                  <div className='titles flex h-screen w-full flex-col items-center justify-center'>
                     <div className='yointro_text-container relative h-auto'>
                       <h3 className='text-sm text-white opacity-50 xl:text-xl'>
                         Lo que hago

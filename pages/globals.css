@@ -52,7 +52,7 @@ h5,
 h6,
 a,
 label {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fluid {
@@ -144,7 +144,7 @@ label {
 }
 
 .gradient_transitions::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -158,7 +158,7 @@ label {
 }
 
 .gradient_transitions::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -214,7 +214,7 @@ label {
 .main:before {
   background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
   position: absolute;
-  content: "";
+  content: '';
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -222,8 +222,8 @@ label {
 }
 
 .main:after {
-  content: "";
-  background-image: url("/assets/images/grid.svg");
+  content: '';
+  background-image: url('/assets/images/grid.svg');
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -295,19 +295,19 @@ label {
 /* Tailwind Styles */
 
 .app {
-  @apply relative flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative mx-auto flex max-w-7xl flex-col items-center justify-center px-6 sm:px-16;
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-poppins flex items-center justify-center;
+  @apply flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center font-poppins text-sm text-white transition-all hover:bg-white hover:text-black;
 }
 
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-poppins flex items-center justify-center;
+  @apply flex items-center justify-center rounded-full border border-black bg-transparent px-5 py-1.5 text-center font-poppins text-sm text-black transition-all hover:bg-black hover:text-white;
 }
 
 .head_text {
-  @apply font-semibold leading-[1] tracking-tight sm:text-6xl capitalize text-left;
+  @apply text-left font-semibold capitalize leading-[1] tracking-tight sm:text-6xl;
   font-size: clamp(4rem, 9vw, 10.5rem);
 }
 
@@ -346,19 +346,19 @@ label {
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 max-w-2xl text-lg text-gray-600 sm:text-xl;
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-roboto pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-roboto text-sm font-medium shadow-lg focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-200 bg-white/20 p-5 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur;
 }
 
 .prompt_layout {
@@ -367,50 +367,50 @@ label {
 
 /* Feed Component */
 .feed {
-  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+  @apply mx-auto mt-16 flex w-full max-w-xl flex-col items-center justify-center gap-2;
 }
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply mt-2 flex h-[200px] w-full rounded-lg p-3 text-sm text-gray-500 outline-0;
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply mt-2 flex w-full rounded-lg p-3 text-sm text-gray-500 outline-0;
 }
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-roboto font-semibold text-lg text-black tracking-wide;
+  @apply font-roboto text-lg font-semibold tracking-wide text-black max-sm:hidden;
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 flex w-full min-w-[210px] flex-col items-end justify-end gap-2 rounded-lg bg-white p-5;
 }
 
 .dropdown_link {
-  @apply text-sm font-poppins text-gray-700 hover:text-gray-500 font-medium;
+  @apply font-poppins text-sm font-medium text-gray-700 hover:text-gray-500;
 }
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply h-fit w-full flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px];
 }
 
 .flex-center {
-  @apply flex justify-center items-center;
+  @apply flex items-center justify-center;
 }
 
 .flex-start {
-  @apply flex justify-start items-start;
+  @apply flex items-start justify-start;
 }
 
 .flex-end {
-  @apply flex justify-end items-center;
+  @apply flex items-center justify-end;
 }
 
 .flex-between {
-  @apply flex justify-between items-center;
+  @apply flex items-center justify-between;
 }
 
 .navBar_container-nav-items a {
@@ -469,7 +469,7 @@ label {
   max-width: 600px;
   font-size: clamp(1.3rem, 0.9vw, 1.5rem);
   font-weight: 300;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .item-image {
@@ -716,7 +716,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 
 .bg-inOut::before {
   position: fixed;
-  content: "";
+  content: '';
   width: 100%;
   height: 4rem;
   top: 0;
@@ -894,7 +894,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 .menu-transition.mobile-menu .menu-title h3 {
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
   transform: translateY(0%);
-  transition: all 0.4s ease-in-out 0.7s;
+  transition: all 0s ease-in-out 0.5s;
 }
 
 .close-icon span {
@@ -920,7 +920,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
   background: #ffffff;
   width: 2rem;
   border-radius: 4px;
-  content: "";
+  content: '';
   position: absolute;
   bottom: 15px;
   left: 0;
@@ -977,7 +977,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 .loading-container > div span {
   transform: translateX(0);
   display: block;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* transition: all 0.6s ease-in-out; */
   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1050,7 +1050,7 @@ box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.1); */
 }
 
 .vignette::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

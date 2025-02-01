@@ -48,20 +48,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <StickyCursor />
       <AnimatePresence mode='wait'>
         <motion.div
-          initial={{
-            clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)'
-          }}
-          animate={{
-            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
-          }}
-          exit={{
-            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
-          }}
-          transition={{ delay: 0.5, duration: 1, ease: 'backInOut' }}
-          className='fixed inset-0 z-[30] bg-black'
-        />
-
-        <motion.div
           key={router.route}
           className='relative bg-[#ede8e3]'
           initial='initialState'
@@ -70,11 +56,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           transition={{ delay: 0, duration: 0.5 }}
           variants={{
             initialState: {
-              //opacity: 0,
-              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+              opacity: 0,
+              clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)'
             },
             animateState: {
-              //opacity: 1,
+              opacity: 1,
               clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
             },
             exitstate: {
@@ -89,6 +75,19 @@ const App = ({ Component, pageProps }: AppProps) => {
             className={`${poppins.className}`}
           />
         </motion.div>
+        {/* <motion.div
+          initial={{
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)'
+          }}
+          animate={{
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+          }}
+          exit={{
+            clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+          }}
+          transition={{ delay: 0.5, duration: 1, ease: 'backInOut' }}
+          className='fixed inset-0 z-[30] bg-black'
+        /> */}
       </AnimatePresence>
       <Footer />
     </>
