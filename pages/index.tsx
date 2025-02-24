@@ -23,9 +23,9 @@ export default function Home() {
   const x = useTransform(horizontalScroll, [0, 1], ['0%', '-300%'])
   const { scrollYProgress: ocultarScroll } = useScroll({
     target: refPortafolio,
-    offset: ['start end', '.3 end']
+    offset: ['start end', '.5 end']
   })
-  const ocultar = useTransform(ocultarScroll, [0, 1], [1, 0])
+  const ocultar = useTransform(ocultarScroll, [0, 0.5, 1], [1, 1, 0])
   const { scrollYProgress: scrollYPortafolio } = useScroll({
     target: refPortafolio,
     offset: ['.2 end', '.5 start']
@@ -81,7 +81,7 @@ export default function Home() {
                   <div className='yointro_text-container scroll-reveal'>
                     <h3 className='text-sm xl:text-xl'>Acerca de mi</h3>
                     <h2 className='heading'>
-                      <span>Diseñador web y digital freelance</span>
+                      <span>Diseñador UX/UI</span>
                     </h2>
                   </div>
                 </motion.div>
@@ -94,8 +94,8 @@ export default function Home() {
                 >
                   <div className='subtitles'>
                     <p className='text-gray-primario'>
-                      Hola, soy Arsenio Lara, diseñador web y digital freelance.
-                      Me dedico a cada proyecto con pasión para crear algo
+                      Hola, soy Arsenio Lara, diseñador UX/UI freelance. Me
+                      dedico a cada proyecto con pasión para crear algo
                       elegante, duradero y efectivo para ti y tus clientes.
                     </p>
                   </div>
@@ -152,7 +152,7 @@ export default function Home() {
                     <h2 className='heading'>
                       <span>
                         Impulsando la innovación en el ámbito digital, soy
-                        Arsenio, diseñador web y digital freelance.
+                        Arsenio, diseñador UX/UI freelance.
                       </span>
                     </h2>
                   </div>

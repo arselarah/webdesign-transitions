@@ -43,9 +43,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <NavBar />
-      <NavMobile />
-      <StickyCursor />
       <AnimatePresence mode='wait'>
         <motion.div
           key={router.route}
@@ -69,6 +66,9 @@ const App = ({ Component, pageProps }: AppProps) => {
             }
           }}
         >
+          <NavBar />
+          <NavMobile />
+          <StickyCursor />
           <Component
             key={router.route}
             {...pageProps}

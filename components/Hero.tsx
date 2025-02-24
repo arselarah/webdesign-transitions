@@ -82,7 +82,7 @@ const Hero = () => {
               }}
               className='text-center text-white'
             >
-              Arsenio Lara - Web & Digital Designer
+              Arsenio Lara - Diseñador UX/UI
             </motion.h3>
           </div>
 

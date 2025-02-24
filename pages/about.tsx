@@ -71,6 +71,11 @@ const About = () => {
 
   const diplomados = [
     {
+      titulo: 'Certificado en Diseño UX por Google',
+      contenido:
+        'Formación especializada desarrollada por Google, que acredita mi dominio en los fundamentos del diseño de experiencia de usuario (UX). Este certificado respalda mi capacidad para transformar ideas en productos digitales atractivos, funcionales y alineados con las expectativas del usuario.'
+    },
+    {
       titulo: 'Diplomado de Marketing Digital',
       contenido:
         'Impartido en Guadalajara por Jaime Bravo (Marketing Mundial y Asociación Latinoamericana de Usuarios de Internet SC).'
@@ -78,11 +83,6 @@ const About = () => {
     {
       titulo: 'Community Manager Guadalajara',
       contenido: 'Impartido en Guadalajara por Roberto Corona (TEINUX).'
-    },
-    {
-      titulo: 'Google UX Design Certificate (Cursando)',
-      contenido:
-        'Desarrollado por Google. Incorpora los aspectos básicos del diseño de UX: cómo lograr empatía con los usuarios, crear wireframes y prototipos, y realizar investigaciones para probar los diseños.'
     }
   ]
 
