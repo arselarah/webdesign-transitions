@@ -74,6 +74,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             {...pageProps}
             className={`${poppins.className}`}
           />
+          <Footer />
         </motion.div>
         {/* <motion.div
           initial={{
@@ -89,7 +90,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           className='fixed inset-0 z-[30] bg-black'
         /> */}
       </AnimatePresence>
-      <Footer />
     </>
   )
 }
